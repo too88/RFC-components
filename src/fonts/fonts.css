@@ -1,0 +1,10 @@
+/* Inter font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* Drone Ranger Pro font */
+@font-face {
+  font-display: swap;
+  font-family: "drone-ranger-pro";
+  font-weight: 700;
+  src: url("./drone-ranger-pro.otf") format("opentype");
+}

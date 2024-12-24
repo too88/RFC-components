@@ -51,6 +51,34 @@ yarn dev
 
 * Use latest LTS version (v.20.xx.xx)
 
+## Component Making
+
+## STEP1: Generate base code from scaffold
+
+```bash
+# Create atom component
+npm run gen:component:atom atom-component
+
+# Create molecule component
+npm run gen:component:molecule molecule-component
+
+# Create organism component
+npm run gen:component:organism organism-component
+```
+
+- The name of component in `yarn gen:component:*` should be lowercased.
+  - No `_`, `-` allowed.
+
+## STEP2: Open Storybook
+
+Storybook is a component catalog. Please implement component on the environment
+
+```bash
+npm run storybook
+```
+
+## STEP3: Modify index.tsx, index.scss & index.stories.tsx generated at STEP1
+
 ### Demo link
 
 Update later!
