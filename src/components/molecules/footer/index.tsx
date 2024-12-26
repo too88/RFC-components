@@ -82,7 +82,7 @@ const Footer = () => {
           </Flex>
         </Col>
 
-        <Col xs={24} xxl={9}>
+        <Col xs={24} xxl={8}>
           <Typography.Title className={footerStyle.title} level={4}>
             Subscribe to receive our latest update
           </Typography.Title>
@@ -104,7 +104,7 @@ const Footer = () => {
 
       <Divider className={footerStyle.divider} />
 
-      <Row gutter={32} justify="space-between">
+      <Row gutter={2} justify="space-between">
         <Col xs={24} lg={12} xl={12} xxl={16}>
           <Typography.Text className={footerStyle.text}>
             ©2023 Tyme - Edit. All Rights reserved.
