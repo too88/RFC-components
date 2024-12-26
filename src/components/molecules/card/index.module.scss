@@ -1,0 +1,138 @@
+@import "~/styles";
+
+.container {
+  &:global {
+    &.ant-card {
+      background: rgba(58, 56, 65, 0.6);
+      border-radius: 10px;
+      padding: 16px;
+      width: 267px;
+
+      .ant-card-cover {
+        height: 233px;
+        width: 235px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+
+        div {
+          border-radius: 4px;
+        }
+      }
+
+      .ant-card-body {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .image {
+    object-fit: cover;
+    position: absolute;
+    object-position: center;
+    width: 100%;
+    height: 197px;
+    bottom: 0;
+  }
+
+  .category {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    color: $highlight-color;
+    padding: 4px 12px;
+    text-align: center;
+    font-family: $fontset-inter;
+    font-weight: $fw-500;
+    font-size: $fs-12;
+    font-style: normal;
+    border-radius: 4px;
+    background: rgba(49, 59, 69, 0.5);
+    line-height: $line-height-md;
+  }
+
+  .heartIcon {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+
+    span {
+      width: 24px;
+      height: 24px;
+      color: $highlight-color;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.title {
+  color: $highlight-color;
+  font-family: $fontset-inter;
+  line-height: $line-height-lg;
+  font-weight: $fw-600;
+  font-size: $fs-14;
+  font-style: normal;
+}
+
+.ETHPrice {
+  color: $highlight-color;
+  line-height: $line-height-md;
+  font-family: $fontset-inter;
+  font-weight: $fw-500;
+  font-size: $fs-13;
+  text-align: center;
+  font-style: normal;
+}
+
+.metaAvatarContainer {
+  &:global {
+    &.ant-card-meta {
+      align-items: center;
+
+      .ant-card-meta-detail .ant-card-meta-title {
+        color: $highlight-color;
+        font-family: $fontset-inter;
+        line-height: $line-height-md;
+        font-weight: $fw-500;
+        font-size: $fs-12;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+.metaAvatar {
+  position: relative;
+
+  .avatar {
+    &:global {
+      &.ant-avatar {
+        position: relative;
+        background-color: $highlight-color;
+      }
+    }
+  }
+
+  .onlineStatus {
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    background: $darker-color;
+    padding: 2px;
+    border-radius: 50%;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

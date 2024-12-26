@@ -1,0 +1,63 @@
+@import "~/styles";
+
+.loaderIcon {
+  &:global {
+    &.ant-spin .ant-spin-dot-spin {
+      color: $color-base;
+    }
+  }
+}
+
+.loading {
+  height: 200px;
+
+  @include device(small-tablet) {
+    height: 400px;
+  }
+}
+
+.cardList {
+  justify-content: center;
+  margin-bottom: 15px;
+  overflow-y: auto;
+  max-height: 2069px;
+
+  @include device(small-tablet) {
+    justify-content: flex-start;
+  }
+}
+
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: yellow #777777;
+}
+
+.readMoreBtn {
+  &:global {
+    &.ant-btn {
+      width: 250px;
+      height: 70px;
+      padding: 23px 0px;
+
+      @include device(tablet) {
+        width: 326px;
+      }
+
+      span {
+        font-weight: $fw-600;
+        font-size: $fs-16;
+        line-height: $line-height-lg;
+      }
+    }
+  }
+}
+
+.empty {
+  &:global {
+    &.ant-empty {
+      .ant-empty-description {
+        color: $color-base;
+      }
+    }
+  }
+}
