@@ -25,3 +25,12 @@ $color-background-base-gradient: (
 */
 $fontset-drone: "drone-ranger-pro", sans-serif;
 $fontset-inter: "Inter", sans-serif;
+
+/*
+** Layouts (length, size)
+*/
+$width-min-sp: 375px;
+$width-max-sp: 768px;
+$width-min-tablet: 1024px;
+$width-max-tablet: 1280px;
+$width-min-pc: 1440px;
