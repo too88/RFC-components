@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useReducer, useRef } from "react";
 import { FormInstance } from "antd";
 
-import { IProduct } from "~/components/molecules/ProductCard/index.tsx";
+import { IProduct } from "~/components/molecules/card/index.tsx";
 import { IState, initialState, reducer } from "./reducer.ts";
 import { AUTO_REFRESH_AFTER_ONE_MINUTE, PAGE, PAGINATION_PLUS_1 } from "~/libs/constants.ts";
 import productListService from "~/services/index.ts";
@@ -29,7 +29,7 @@ export interface IGetParams extends Pagination {
 const useMarketplaceActions = (form: FormInstance) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const currentState = useRef<IState>(state);
-  const { data, loading, isLoadMore, pagination } = state;
+  const { data, loading, isLoading, pagination } = state;
 
   const dispatchData = (data: IProduct[]) =>
     dispatch({ type: "UPDATE_DATA", payload: data });
@@ -56,9 +56,29 @@ const useMarketplaceActions = (form: FormInstance) => {
       price_gte: formData.price[0],
       price_lte: formData.price[1],
     };
-
     return paramFields;
   };
+
+  const addMoreDataFn = useCallback(async () => {
+    try {
+      dispatchLoadMore(true);
+
+      const productListData = await productListService.getProductList({
+        ...generateParams(),
+        _page: pagination._page! + PAGINATION_PLUS_1,
+        ...pagination,
+      });
+
+      dispatchState({
+        data: [...data, ...productListData],
+        pagination: { ...pagination, _page: pagination._page! + PAGINATION_PLUS_1 },
+      });
+    } catch (error) {
+      console.error("GET-LOADING-MORE-ERROR", error);
+    } finally {
+      dispatchLoadMore(false);
+    }
+  }, [pagination, data]);
 
   const getProductList = useCallback(
     async (category?: string) => {
@@ -79,27 +99,6 @@ const useMarketplaceActions = (form: FormInstance) => {
     },
     [pagination]
   );
-
-  const handleLoadMore = useCallback(async () => {
-    try {
-      dispatchLoadMore(true);
-
-      const productListData = await productListService.getProductList({
-        ...generateParams(),
-        _page: pagination._page! + PAGINATION_PLUS_1,
-        ...pagination,
-      });
-
-      dispatchState({
-        data: [...data, ...productListData],
-        pagination: { ...pagination, _page: pagination._page! + PAGINATION_PLUS_1 },
-      });
-    } catch (error) {
-      console.error("GET-LOADING-MORE-ERROR", error);
-    } finally {
-      dispatchLoadMore(false);
-    }
-  }, [pagination, data]);
 
   useEffect(() => {
     currentState.current = state;
@@ -124,7 +123,7 @@ const useMarketplaceActions = (form: FormInstance) => {
     getProductList();
   }, []);
 
-  return { handleLoadMore, getProductList, data, loading, form, isLoadMore };
+  return { addMoreDataFn, getProductList, data, loading, form, isLoading };
 };
 
 export default useMarketplaceActions;

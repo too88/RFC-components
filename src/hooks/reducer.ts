@@ -1,11 +1,11 @@
-import { IProduct } from "~/components/molecules/ProductCard/index.tsx";
+import { IProduct } from "~/components/molecules/card/index.tsx";
 import { Pagination } from "./useMarketplaceActions.ts";
 import { LIMIT, PAGE } from "~/libs/constants.ts";
 
 export const initialState = {
     data: [] as IProduct[],
     loading: false,
-    isLoadMore: false,
+    isLoading: false,
     pagination: {
         _page: PAGE,
         _limit: LIMIT,
@@ -31,7 +31,7 @@ export const reducer = (state: IState, action: ReducerAction) => {
         case "UPDATE_LOADING":
             return { ...state, loading: action.payload };
         case "UPDATE_LOAD_MORE":
-            return { ...state, isLoadMore: action.payload };
+            return { ...state, isLoading: action.payload };
         case "UPDATE_PAGINATION":
             return {
                 ...state,
