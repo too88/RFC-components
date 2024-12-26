@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { BASE_API } from '~/libs/constants.ts'
 
 const apiClient = axios.create({
-  baseURL: "",
+  baseURL: BASE_API,
   paramsSerializer: (params) => {
     const processedParams = Object.fromEntries(
       Object.entries(params).filter(([_, value]) => {
