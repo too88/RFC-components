@@ -63,6 +63,7 @@
     "@ant-design/icons": "^5.5.2",
     "antd": "^5.22.4",
     "axios": "^1.7.9",
+    "change-case": "^5.4.4",
     "classnames": "^2.5.1",
     "cross-env": "^7.0.3",
     "hygen": "^6.2.11",
