@@ -1,0 +1,59 @@
+@use "sass:map";
+@import "~/styles";
+
+.myDrawer {
+  &:global {
+    &.ant-drawer-content {
+      @include blur();
+
+      .ant-drawer-header {
+        height: 84px;
+        flex: unset;
+      }
+    }
+  }
+}
+
+.antHeader {
+  &:global {
+    &.ant-layout-header {
+      z-index: $index-800;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0;
+      height: 84px;
+      @include blur();
+    }
+  }
+}
+
+.header {
+  height: 100%;
+  padding: 0 20px;
+
+  @include device(pc) {
+    padding: 0 160px 0 304px;
+  }
+}
+
+.leftIcon {
+  color: $highlight-color;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.rightIcon {
+  color: $highlight-color;
+
+  svg {
+    position: relative;
+    top: 6px;
+    width: 24px;
+    height: 24px;
+  }
+}

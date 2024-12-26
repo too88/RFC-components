@@ -1,0 +1,49 @@
+@import "~/styles";
+
+.navigation {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+
+  @include device(small-tablet) {
+    gap: 60px;
+    flex-direction: row;
+  }
+}
+
+.navigation-item {
+  font-family: $fontset-drone;
+  line-height: line-height-sm;
+  color: $highlight-color;
+  font-size: $fs-14;
+  font-style: normal;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $color-base;
+  }
+
+  @include device(sp) {
+    font-weight: $fw-700;
+    line-height: $line-height-md;
+  }
+}
+
+.focus {
+  color: $color-base !important;
+  position: relative;
+
+  &::before {
+    content: "";
+    bottom: 0;
+    background-color: $color-base;
+    left: 3px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    width: 16px;
+    transition: width 0.4s ease;
+    position: absolute;
+    display: block;
+  }
+}
