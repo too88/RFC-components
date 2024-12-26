@@ -5,6 +5,7 @@ $color-base: #da458f;
 $color-base-gray: #8e8e8e;
 $common-color: #ffffffa6;
 $highlight-color: #ffffff;
+$darker-color: #17161a;
 $color-background-base-gradient: (
   "primary": linear-gradient(91deg, #da458f -6%, #da34dd 113.05%),
   "secondary": linear-gradient(
@@ -34,3 +35,33 @@ $width-max-sp: 768px;
 $width-min-tablet: 1024px;
 $width-max-tablet: 1280px;
 $width-min-pc: 1440px;
+$width-max-pc: 1920px;
+
+/*
+** Line height
+*/
+$line-height-sm: 18px;
+$line-height-md: 20px;
+$line-height-lg: 24px;
+$line-height-xl: 32px;
+
+/*
+** Font weight
+*/
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+
+/*
+** Font size
+*/
+$fs-12: 12px;
+$fs-13: 13px;
+$fs-14: 14px;
+$fs-16: 16px;
+$fs-20: 20px;
+
+/*
+** Index
+*/
+$index-800: 800;
