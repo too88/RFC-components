@@ -1,6 +1,6 @@
 # TymeX Interview Frontend
 
-The source of components and pages for https://updatelater.com TymeX Interview Frontend site
+The source of components and pages for https://tymex-interview.web.app TymeX Interview Frontend site
 
 ### Branches
 
@@ -8,7 +8,7 @@ The source of components and pages for https://updatelater.com TymeX Interview F
 
 - `master`
   - The default branch of this repository.
-  - Expected to be synced with https://updatelater.com production release.
+  - Expected to be synced with https://tymex-interview.web.app production release.
   - **Your should be start all your work from this branch.**
 
 #### Temporary branches
@@ -81,7 +81,7 @@ npm run storybook
 
 ### Demo link
 
-Update later!
+https://tymex-interview.web.app
 
 
 
