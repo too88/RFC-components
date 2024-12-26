@@ -1,0 +1,200 @@
+@use "sass:map";
+@import "~/styles";
+
+.container {
+  margin: auto;
+  max-width: 70vw;
+
+  @include device(small-tablet) {
+    max-width: 100%;
+  }
+}
+
+.searchInput {
+  &:global {
+    &.ant-input-affix-wrapper {
+      .ant-input-prefix {
+        span {
+          width: 24px;
+          height: 24px;
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      border-radius: 4px;
+      height: 44px;
+      border: 1px solid $color-base-gray;
+      background-color: transparent;
+      align-items: center;
+      flex-shrink: 0;
+      padding: 10px 16px;
+
+      .ant-input {
+        color: $highlight-color;
+
+        &::placeholder {
+          color: $color-base-gray;
+          font-size: $fs-16;
+          font-weight: $fw-500;
+          line-height: $line-height-lg;
+        }
+      }
+    }
+  }
+}
+
+.inputSearchIcon {
+  color: $color-base-gray;
+}
+
+.filterInput {
+  :global {
+    .ant-form-item-label {
+      label {
+        color: $color-base-gray;
+        font-family: $fontset-inter;
+        line-height: $line-height-lg;
+        font-weight: $fw-600;
+        font-size: $fs-16;
+        font-style: normal;
+        text-transform: uppercase;
+      }
+
+      label[for="filter_price"] {
+        color: $highlight-color;
+      }
+    }
+  }
+}
+
+.tooltip {
+  &:global {
+    &.ant-tooltip {
+      .ant-tooltip-arrow {
+        &::before {
+          background: map-get($color-background-base-gradient, "primary");
+        }
+      }
+
+      .ant-tooltip-inner {
+        background: map-get($color-background-base-gradient, "primary");
+        font-weight: $fw-600;
+        font-style: $fs-16;
+        line-height: $line-height-lg;
+        width: 100px;
+        height: 40px;
+        border-radius: 4px;
+        padding-top: 8px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.formSelect.formSelect {
+  height: 44px;
+
+  :global {
+    .ant-select-arrow {
+      color: $highlight-color;
+    }
+
+    .ant-select-selector {
+      background: transparent;
+      border-color: $color-base-gray;
+      padding: 10px 16px;
+
+      .ant-select-selection-item {
+        color: $highlight-color;
+        font-family: $fontset-inter;
+        line-height: $line-height-lg;
+        font-weight: $fw-500;
+        font-size: $fs-16;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+.resetBtn {
+  &:global {
+    &.ant-btn {
+      padding-left: 0;
+      padding-right: 0;
+      .ant-typography {
+        color: $highlight-color;
+        font-family: $fontset-inter;
+        line-height: $line-height-lg;
+        font-weight: $fw-600;
+        font-size: $fs-16;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+.searchBtn {
+  &:global {
+    &.ant-btn {
+      width: 100px;
+      height: 44px;
+      padding: 10px 56px 10px 57px;
+
+      @include device(tablet) {
+        width: 168px;
+      }
+    }
+  }
+}
+
+.range {
+  &:global {
+    &.ant-slider {
+      .ant-slider-track {
+        background: map-get($color-background-base-gradient, "primary");
+        height: 8px;
+      }
+
+      .ant-slider-handle {
+        &::after {
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="url(%23paint0_radial_1_290)"/><circle cx="8" cy="8" r="8" fill="url(%23paint1_radial_1_290)"/><circle cx="8" cy="8" r="8" fill="url(%23paint2_radial_1_290)"/><defs><radialGradient id="paint0_radial_1_290" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(8 8) rotate(90) scale(8)"><stop stop-color="%23F643E4"/><stop offset="1" stop-color="%23FF54EE" stop-opacity="0"/></radialGradient><radialGradient id="paint1_radial_1_290" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(8 8) rotate(90) scale(8)"><stop stop-color="%23F643E4"/><stop offset="1" stop-color="%23FF54EE" stop-opacity="0"/></radialGradient><radialGradient id="paint2_radial_1_290" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(8 8) rotate(90) scale(8)"><stop stop-color="white"/><stop offset="1" stop-color="%23FF54EE" stop-opacity="0"/></radialGradient></defs></svg>');
+          background-color: unset;
+          background-size: cover;
+          background-repeat: no-repeat;
+          box-shadow: 0 0 0 1px #fff;
+          width: 20px;
+          height: 20px;
+        }
+
+        &:focus::after,
+        &:hover::after {
+          outline: 7px solid rgb(218 64 163 / 49%);
+        }
+
+        &.ant-slider-handle-1,
+        &.ant-slider-handle-2 {
+          transform: translate(-110%, -25%) !important;
+        }
+      }
+
+      .ant-slider-rail {
+        background: rgba(58, 56, 65, 1);
+        height: 8px;
+      }
+    }
+  }
+}
+
+.ETHPrice {
+  color: rgba(214, 214, 214, 1);
+  line-height: $line-height-lg;
+  font-family: $fontset-inter;
+  font-weight: $fw-500;
+  font-size: $fs-16;
+  text-align: center;
+  font-style: normal;
+  padding-bottom: 20px;
+}

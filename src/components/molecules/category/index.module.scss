@@ -1,0 +1,72 @@
+@use "sass:map";
+@import "~/styles";
+
+.container {
+  &:global {
+    &.ant-tabs {
+      position: relative;
+
+      :global(.ant-tabs-nav) {
+        margin-bottom: 0 !important;
+
+        &::before {
+          border-bottom: unset !important;
+        }
+
+        :global(.ant-tabs-tab-active) {
+          border-bottom-color: transparent;
+          background: map-get(
+            $color-background-base-gradient,
+            "primary"
+          ) !important;
+        }
+
+        :global(.ant-tabs-ink-bar) {
+          display: none;
+        }
+
+        :global(.ant-tabs-nav-list) {
+          align-items: stretch;
+        }
+
+        :global(.ant-tabs-tab) {
+          color: $common-color;
+          border-radius: 4px;
+          border: unset;
+          flex: 1;
+          padding: 10px 16px;
+          border-radius: 4px;
+          background: map-get($color-background-base-gradient, "disabled");
+        }
+
+        :global(.ant-tabs-tab-btn) {
+          text-align: center;
+          color: $highlight-color;
+          font-family: $fontset-inter;
+          line-height: $line-height-lg;
+          font-weight: $fw-600;
+          font-size: $fs-16;
+          font-style: normal;
+
+          &:focus:not(:focus-visible) {
+            color: $common-color;
+          }
+        }
+
+        :global(.ant-tabs-nav-wrap) {
+          justify-content: flex-start;
+        }
+
+        :global(.ant-tabs-nav-operations .ant-tabs-nav-more) {
+          border-radius: 4px;
+          background: map-get($color-background-base-gradient, "secondary");
+        }
+
+        :global(.ant-tabs-tab-active .ant-tabs-tab-btn) {
+          font-weight: $fw-700;
+          color: $highlight-color;
+        }
+      }
+    }
+  }
+}
