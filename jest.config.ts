@@ -9,4 +9,11 @@ export default {
     '^~/(.*)$': '<rootDir>/src/$1'
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  transformIgnorePatterns: [
+    "/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.js$",
+    "/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.ts$",
+    "/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.tsx$",
+  ],
+  coverageDirectory: 'coverage',
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts']
 }
