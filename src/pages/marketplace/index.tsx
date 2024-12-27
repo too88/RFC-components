@@ -1,12 +1,12 @@
-import React from 'react';
-import { Col, Flex, Form, Row } from 'antd';
+import React from "react";
+import { Col, Flex, Form, Row } from "antd";
 
-import Hero from '~/components/organisms/hero';
-import markerPlaceStyle from './index.module.scss';
-import Category from '~/components/molecules/category';
-import useMarketplaceActions from '~/hooks/useMarketplaceActions';
-import SearchComponent, { FieldType } from '~/components/molecules/filter/index.tsx';
-import CardList from '~/components/molecules/card-list/index.tsx';
+import Hero from "~/components/organisms/hero";
+import markerPlaceStyle from "./index.module.scss";
+import Category from "~/components/molecules/category";
+import SearchComponent, { FieldType } from "~/components/molecules/filter/index.tsx";
+import CardList from "~/components/molecules/card-list/index.tsx";
+import useMarketplaceActions from "~/hooks/index.ts";
 
 const Marketplace = () => {
   const [form] = Form.useForm<FieldType>();

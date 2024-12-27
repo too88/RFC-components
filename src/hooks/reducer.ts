@@ -1,5 +1,5 @@
 import { IProduct } from "~/components/molecules/card/index.tsx";
-import { Pagination } from "./useMarketplaceActions.ts";
+import { Pagination } from "./index.ts";
 import { LIMIT, PAGE } from "~/libs/constants.ts";
 
 export const initialState = {

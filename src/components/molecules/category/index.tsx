@@ -10,7 +10,7 @@ interface IProductCategoryProps extends TabsProps {
   getListFn: (category?: string) => Promise<void>;
 }
 
-const categoryList: Option[] = [
+export const categoryList: Option[] = [
   { value: "", label: "All" },
   { value: "Upper Body", label: "Upper Body" },
   { value: "Lower Body", label: "Lower Body" },
@@ -23,11 +23,7 @@ const categoryList: Option[] = [
   { value: "Rare", label: "Rare" },
 ];
 
-const Category = ({
-  getListFn,
-  className,
-  ...props
-}: IProductCategoryProps) => {
+const Category = ({ getListFn, className, ...props }: IProductCategoryProps) => {
   return (
     <Tabs
       {...props}
@@ -36,7 +32,7 @@ const Category = ({
         label,
         key: value,
       }))}
-      onChange={(item) => getListFn(item)}
+      onChange={item => getListFn(item)}
       defaultActiveKey={categoryList[0].value}
       tabBarGutter={24}
     />
@@ -44,3 +40,4 @@ const Category = ({
 };
 
 export default memo(Category);
+

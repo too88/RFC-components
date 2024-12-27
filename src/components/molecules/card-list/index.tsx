@@ -18,15 +18,8 @@ const CardList = ({ data, loadMoreFn, isLoading, loading }: IProductProps) => {
     <React.Fragment>
       {!loading ? (
         <React.Fragment>
-          {!!data?.length ? (
-            <Flex
-              className={classNames(
-                cardListStyle.cardList,
-                cardListStyle.scrollbar
-              )}
-              gap={40}
-              wrap
-            >
+          {data?.length ? (
+            <Flex className={classNames(cardListStyle.cardList, cardListStyle.scrollbar)} gap={40} wrap>
               {data.map((product, idx) => {
                 return <ProductCard key={idx} product={product} />;
               })}
@@ -43,12 +36,7 @@ const CardList = ({ data, loadMoreFn, isLoading, loading }: IProductProps) => {
 
       {!!data?.length && !loading && (
         <Flex justify="center">
-          <Button
-            className={cardListStyle.readMoreBtn}
-            color="secondary"
-            loading={isLoading}
-            onClick={loadMoreFn}
-          >
+          <Button className={cardListStyle.readMoreBtn} color="secondary" loading={isLoading} onClick={loadMoreFn}>
             View More
           </Button>
         </Flex>
@@ -58,3 +46,4 @@ const CardList = ({ data, loadMoreFn, isLoading, loading }: IProductProps) => {
 };
 
 export default memo(CardList);
+
